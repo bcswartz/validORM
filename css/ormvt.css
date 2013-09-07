@@ -1,0 +1,264 @@
+.addParamControl, .addValidationsControl {
+	float:right;
+}
+
+.blockContainer {
+	background-color:#fff;
+	margin-left:20px;
+	margin-right:20px;
+}
+
+body {
+  padding:15px;
+}
+
+.deleteLink {
+	color: red !important;
+	font-weight:bold;
+	margin-left:2ex;
+}
+
+.errorText {
+	color:red;
+	font-weight:bold;
+}
+
+.expandBlockStyleA {
+	background-color:#ffffee;
+	border:1px solid black;	
+	margin-bottom:15px;
+	border-radius:10px;
+}
+
+.expandBlockStyleB {
+	border:2px solid #666;
+	border-radius:5px;
+	padding:5px;
+	margin-bottom:15px;
+	margin-top:15px;
+}
+
+div.expandBlockStyleB > h3 {
+	background-color:#ffff99;
+	border-radius:3px;
+	margin: -5px -5px -4px -5px;
+	padding-bottom:3px;
+	padding-top:5px;
+
+}
+
+.expandBlockStyleB  .icon-minus-sign,.icon-plus-sign  {
+  	margin-top:-5px;
+}
+
+.expandBlockStyleC {
+	background-color:#ccffff;
+	border:2px solid #666;
+	border-radius:5px;
+	margin-bottom:5px;
+	padding:5px;
+}
+
+#fileList {
+	list-style-type:none;
+	margin-left:0px;
+	padding-left:0px;
+}
+
+#fileList > li {
+	padding:10px;
+}
+
+#fileList > li > h4 {
+	margin-left:2em;
+	font-size:130%;
+}
+
+.fileTimestamps {
+	margin-left:3em;
+}
+
+.fileTimestamps > li {
+	font-size:115%;
+	margin-left:2em;
+	margin-top:1ex;
+}
+
+#helpBox {
+	border:1px solid blue;
+	border-radius:10px;
+	margin-bottom:1ex;
+	margin-top:1ex;
+	padding:2ex;
+}
+
+
+#loadFileMsg {
+  	color:#009900;
+	font-size:130%;
+	font-weight:bold;
+	margin-top:1ex;
+	margin-bottom:2ex;
+}
+
+.menuBlock {
+	background-color:#99ffff;
+	border:1px solid #ccc;
+	border-radius: 5px;
+	padding:20px 10px 10px 10px;
+
+}
+
+.menuBlock > p {
+	font-size: 140%;
+}
+
+.menuChoice {
+	background-color:#fff;
+	border:2px solid #666;
+	border-radius: 5px;
+	margin-bottom:3ex;
+	margin-left:2em;
+	margin-top:3ex;
+	padding:20px;
+}
+
+
+.menuChoice p {
+	font-size:120%;
+}
+
+p.menuLink {
+	float:right;
+}
+
+#menuOptions {
+	margin-top:2ex;
+}
+
+#menuOptions > p {
+	font-size:140%;
+	margin-bottom:4ex;	
+}
+
+.openBlock {
+	padding-left:10px;
+}
+
+.optRuleParamLabel {
+	color: #009999;
+}
+
+#orBlock {
+	font-weight:bold;
+	margin-left:2em;
+}
+
+#outcomeBlock > div {
+	border:3px double #666;
+	border-radius:10px;
+	margin-top:2ex;
+	padding:10px;
+}
+
+.paramBox, .validationBox {
+	background-color:#ffffcc;
+	border:3px double #ccc;
+	margin:5px;
+	padding:10px;
+}
+
+.paramBox a {
+  color:red;
+  font-weight:bold;
+  margin-left:.5ex;
+}
+
+div.propParamHint {
+   margin-bottom:2ex;
+   margin-left:1.4ex;
+}
+
+.propValDivLabel {
+	font-style:italic;
+	font-weight:bold;
+	margin-left:10px; 
+	padding-top:3ex;
+}
+
+.propValDivLabel > span {
+	display:block;
+	float:left;
+	width:15em;
+}
+
+div.ruleHeader {
+	background-color:#99ffff;
+	border-radius:3px;
+	margin: -5px -5px 10px -5px;
+	padding-bottom:5px;
+}
+
+div.ruleHeader > h5 {
+	font-size:125%;
+	margin-bottom:0px;
+	margin-left:1ex;
+	padding-bottom:0px;
+	padding-top:5px;
+}
+
+div.ruleHeader > span {
+	display:block;
+  	font-style:italic;
+  	margin-left:3ex;
+  	margin-top:1ex;  
+}
+
+.ruleParams {
+	list-style-type:none;
+	margin-left:0px;
+	margin-top:4ex;
+	padding-left:0px;
+}
+
+.ruleParams a {
+  color:red;
+  font-weight:bold;
+  margin-left:.5ex;
+}
+
+.ruleTypeHint {
+	font-size:90%;
+	font-style:italics;
+}
+
+
+.successText {
+	color:green;
+	font-weight:bold;
+}
+
+.suggestedHints {
+	color:#999;
+	margin-left:10px;
+	margin-top:3ex;
+}
+
+.suggestedHints > span {
+	margin-left:1ex;
+}
+
+.toggleAllControls {
+	float:right;
+	margin-right:10px;
+}
+
+.toggleLink {
+	float:left;
+	margin:1.2ex 10px 0ex 5px;
+}
+
+.topLevelBlurb {
+	font-style:italic;
+	margin-left:4.5ex;
+}

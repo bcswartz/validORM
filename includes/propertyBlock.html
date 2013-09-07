@@ -1,0 +1,72 @@
+<a href="" class="toggleLink" ng-click="toggleOpen(prop,'propertySet')">
+	<i class="icon-minus-sign ng-show: ngOpen.propertySet[prop]== true"></i>
+	<i class="icon-plus-sign ng-show: ngOpen.propertySet[prop]== null || ngOpen.propertySet[prop]== false"></i>
+</a>
+
+<h3>
+	{{prop}}
+	<a href="" class="deleteLink" ng-click="deleteProperty(prop)">X</a>
+</h3>
+	
+<div class="openBlock propertyContainer ng-show: ngOpen.propertySet[prop]== true">
+	<p class="propValDivLabel">
+		<span>Column Property Attributes:</span>
+		<select class="input-medium" ng-model="tempData.attrToAdd" ng-options="attr for (attr,attributes) in colPropertyAttrs"></select> 
+		<input type="button" class="btn" value="Add Attribute" ng-click="addPropAttribute(attributes, tempData.attrToAdd, prop)" /> 
+		<i class="icon-question-sign" title="Use this to add a new property attribute." ng-show="prm.hint != ''"></i>
+		<div class="propParamHint">
+			<strong>NOTE:</strong> If neither "ormtype" nor "sqltype" attributes are provided, the property will default to the "varchar" data type in your database engine.
+		</div>
+	</p>
+		
+	<div class="row paramBox">
+		<p ng-show="hasNoAttributes(attributes)">There are currently no attributes set for this property (other than "name" which is not shown because it cannot be changed).</p>
+		<div class="span3" ng-repeat="(aKey,aValue) in attributes" ng-include src="'includes/propertyAttributes.html'"></div>		
+	</div>
+
+	<p class="propValDivLabel">
+		<span>Column Validation Rules:</span>
+		<select class="input-medium" ng-model="tempData.ruleToAdd" ng-options="ruleType as ruleType for (ruleType,attributes) in colRules"></select>
+		<input type="button" class="btn" value="Add Validation Rule" ng-click="addRule(tempData.ruleToAdd,prop)" /> 
+		<i class="icon-question-sign" title="Use this to add a new validation rule." ng-show="prm.hint != ''"></i>
+	</p>
+	
+	<p class="suggestedHints" ng-show="suggestedValidations[prop] != null && suggestedValidations[prop].length > 0">
+		Suggested validations (click to add) 
+		<i class="icon-question-mark" title="Validation rule suggestions based on the current property attributes"></i>: 
+		<span ng-repeat="sugg in suggestedValidations[prop]">
+			<a href="" ng-click="addRule(sugg.name,prop,sugg.value)">{{sugg.name}}</a> 
+		</span>
+	</p>
+	
+	
+	<div class="row validationBox">
+		<p class="ng-show: vt.props[prop]== null">There are currently no validations configured for this property.</p>
+		
+		<div class="row-fluid ng-show: vt.props[prop] != null">
+			
+			<div class="control-group">
+				<label class="control-label">Desc:</label>   
+				<div class="controls">
+					<input type="text" class="input-medium" ng-model="vt.props[prop].desc" />
+					<p>Human-friendly property name used in default ValidateThis failure message.</p>
+				</div>   
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label">Client Field Name:</label>   
+				<div class="controls">
+					<input type="text" class="input-medium" ng-model="vt.props[prop].clientfieldname" />
+					<p>Name of form field if field name is different from property name.</p>
+				</div>   
+			</div>		
+			
+		</div>
+		
+		<p class="toggleAllControls"><a href="" ng-click="toggleAll('ruleSet',true,prop)">Open All</a> | <a href="" ng-click="toggleAll('ruleSet',false,prop)">Close All</a></p>
+		
+		<div class="expandBlockStyleC" ng-repeat="rule in vt.props[prop].rules" ng-include src="'includes/propertyValidationRules.html'"></div>
+
+	</div> 
+	
+</div>

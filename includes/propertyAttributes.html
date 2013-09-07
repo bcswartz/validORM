@@ -1,0 +1,16 @@
+<label class="stackableLabel">
+	{{colPropertyAttrs[aKey].label}}:
+	<i class="icon-question-sign" title="{{colPropertyAttrs[aKey].hint}}" ng-show="colPropertyAttrs[aKey].hint != ''"></i>
+</label>
+
+<span title="switch" ng-switch on="colPropertyAttrs[aKey].control">
+	
+	<input title="inputTitle" type="text" class="input-medium" ng-model="orm.properties[prop][aKey].value" ng-switch-when="text" ng-change="updateSuggestedValidations(attributes,prop)" />
+
+	<select class="input-medium" ng-model="orm.properties[prop][aKey].value" ng-options="otype.name as otype.name for otype in colOrmTypes" ng-switch-when="ormtypes" ng-change="updateSuggestedValidations(attributes,prop)"></select>
+	
+	<select class="input-medium" ng-model="orm.properties[prop][aKey].value" ng-options="btype.name as btype.name for btype in boolOptions" ng-switch-when="boolean" ng-change="updateSuggestedValidations(attributes,prop)"></select>
+	
+</span>
+
+<a href="" ng-click="removePropAttribute(attributes, aKey)">X</a>

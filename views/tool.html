@@ -1,0 +1,27 @@
+<p class="menuLink"><a href="#/menu">Return to main menu</a></p>
+<h1>ORM Object and Validation Generation</h1>
+
+<form name="ormForm" id="ormForm" class="form-horizontal" method="post" action="" ng-controller="FileGen">
+
+<p id="loadFileMsg" ng-show="loadFile != undefined">Starting data loaded from file "{{loadFile}}"</p>
+
+	<p ng-include src="'includes/guide.html'"></p>
+
+	<div id="mainDetails" class="expandBlockStyleA" ng-include src= "'includes/objectNameTable.html'"></div>		
+
+	<div id="idProp" class="expandBlockStyleA" ng-include src= "'includes/idProperty.html'"></div>	
+	
+	<div id="propVals" class="expandBlockStyleA" ng-include src= "'includes/columnPropertiesAndValidations.html'"></div>	
+	
+	<div id="vtConditions" class="expandBlockStyleA" ng-include src= "'includes/validationConditions.html'"></div>	
+	
+	<div id="vtContexts" class="expandBlockStyleA" ng-include src= "'includes/validationContexts.html'"></div>		
+	
+	<p class="menuLink"><a href="#/menu">Return to main menu</a></p>
+	<input type="button" class="btn btn-primary" value="Generate ORM and ValidateThis Files" ng-click="sendData()" />
+	<span ng-show="dataTransmitting"> <img src="img/spinner.gif" /> Processing...</span>
+	
+	<div id="outcomeBlock" ng-include src= "'includes/outcome.html'"></div>	
+	
+</form>
+

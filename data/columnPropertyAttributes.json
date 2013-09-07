@@ -1,0 +1,115 @@
+{
+	"setter": {
+		"label": "Setter", 
+		"name": "setter",
+		"control": "boolean",
+		"order": 1,
+		"default": false,
+		"hint": "To prevent any setting except via an explicit setter function, set this to false"
+	  },
+	"column": {
+		"label": "Column",
+		"name": "column",
+		"control": "text",
+		"order": 2,
+		"default": "",
+		"hint": "Use when the property name is not the same as the table column name"
+	},
+	"ormtype": {
+		"label": "ORMType",
+		"name": "ormtype",
+		"control": "ormtypes",
+		"order": 3,
+		"default": "",
+		"hint": "Used to designate a Hibernate/database-engine-agnostic data type."
+	},
+	"sqltype": {
+		"label": "SQLType",
+		"name": "sqltype",
+		"control": "text",
+		"order": 4,
+		"default": "",
+		"hint": "Allows you to specify a database-specific datatype."
+	},
+	"length": {
+		"label": "Length",
+		"name": "length",
+		"control": "text",
+		"order": 5,
+		"default": 1,
+		"hint":  "The character length of the database field."
+	},
+	"notnull": {
+		"label": "Notnull",
+		"name": "notnull",
+		"control": "boolean",
+		"order": 6,
+		"default": false,
+		"hint": "Specifies if the database field can have null values.  Default is false."
+	},
+	"precision": {
+		"label": "Precision",
+		"name": "precision",
+		"control": "text",
+		"order": 7,
+		"default": "",
+		"hint": "An integer value denoting the number of digits allowed in a numeric field (including digits after the decimal point)."
+	},
+	"scale": {
+		"label": "Scale",
+		"name": "scale",
+		"control": "text",
+		"order": 8,
+		"default": "",
+		"hint": "Specifies the number of digits to the right of the decimal point."
+	},
+	"dbdefault": {
+		"label": "Dbdefault",
+		"name": "dbdefault",
+		"control": "text",
+		"order": 9,
+		"default": "",
+		"hint": "Sets a default value for this field in the database table."
+	},
+	"unique": {
+		"label": "Unique",
+		"name": "unique",
+		"control": "boolean",
+		"order": 10,
+		"default": false,
+		"hint": "Denotes whether the database field should only accept unique values.  Default is false."
+	},
+	"uniquekey": {
+		"label": "Uniquekey",
+		"name": "uniquekey",
+		"control": "boolean",
+		"order": 11,
+		"default": false,
+		"hint": "Allows you to provide a name for the constraint created for the 'unique' parameter."
+	},
+	"persistent": {
+		"label": "Persistent",
+		"name": "persistent",
+		"control": "boolean",
+		"order": 12,
+		"default": true,
+		"hint": "Only set this to false if you do not want this property persisted in the database as a record column."
+	},
+	"insert": {
+		"label": "Insert",
+		"name": "insert",
+		"control":"boolean",
+		"order": 13,
+		"default": true,
+		"hint": "Determines whether the property should be included in the database INSERT statement / when object record is inserted. Setting both 'insert' and 'update' to false makes the property read-only."
+	},
+	"update": {
+		"label": "Update",
+		"name": "update",
+		"control":"boolean",
+		"order": 14,
+		"default": true,
+		"hint": "Determines whether the property should be included in the database UPDATE statement / when object record is updated. Setting both 'insert' and 'update' to false makes the property read-only."
+	}
+	
+}

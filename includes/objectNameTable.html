@@ -1,0 +1,24 @@
+<a href="" class="toggleLink" ng-click="toggleOpen('objectNameTable')">
+	<i class="icon-minus-sign ng-show: ngOpen.objectNameTable== true"></i>
+	<i class="icon-plus-sign ng-show: ngOpen.objectNameTable== false"></i>
+</a>
+
+<h2>Object Name and Table</h2>
+<p class="topLevelBlurb">(Required) Sets the attributes of the component block in the ORM CFC file.</p>
+<div class="openBlock ng-show: ngOpen.objectNameTable== true">
+	<div class="control-group">
+		<label class="control-label" for="objectName" id="lblObjectName">Object Name:</label>   
+		<div class="controls">
+			<input type="text" name="objectName" id="objectName" ng-model="orm.name" />
+			<p>ORM object name (also file name).</p>
+		</div>   
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label" for="dbTable" id="lbldbTable">Database Table:</label>   
+		<div class="controls">
+			<input type="text" name="dbTable" id="dbTable" ng-model="orm.table" />
+			<p>Database table ORM object will link to.</p>
+		</div>   
+	</div>
+</div>

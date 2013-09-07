@@ -1,0 +1,29 @@
+<a href="" class="toggleLink" ng-click="toggleOpen('columnPropertiesAndValidations')">
+	<i class="icon-minus-sign ng-show: ngOpen.columnPropertiesAndValidations== true"></i>
+	<i class="icon-plus-sign ng-show: ngOpen.columnPropertiesAndValidations== false"></i>
+</a>
+
+<h2>Column Properties and Validations</h2>
+
+<p class="topLevelBlurb">(Required) Create the non-relationship properties in the ORM CFC and the matching validations in the VT rules file.</p>
+
+<div class="openBlock ng-show: ngOpen.columnPropertiesAndValidations== true">
+	
+	<p class="toggleAllControls"><a href="" ng-click="toggleAll('propertySet',true)">Open All</a> | <a href="" ng-click="toggleAll('propertySet',false)">Close All</a></p>
+	
+	<div class="control-group">
+		<label class="control-label">Add Property:</label>
+		<div class="controls">
+			<input type="text" class="input-medium" ng-model="tempData.propertyToAdd" value="{{propertyToAdd}}" />
+			<input type="button" value="Add" ng-click="addProperty(tempData.propertyToAdd)" />
+			<i class="icon-question-mark" title="Use to create a new property."></i>
+		</div>
+	</div>
+
+	
+
+	<div class="blockContainer">
+		<div class="expandBlockStyleB" ng-repeat="(prop,attributes) in orm.properties" ng-include src="'includes/propertyBlock.html'"></div>
+	</div>
+	
+</div>

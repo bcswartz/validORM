@@ -1,0 +1,92 @@
+{"validateThis" : {
+	
+	"objectProperties" : [
+		{
+				"name": "firstName",
+				"desc": "firstName",
+				"clientFieldName": "firstName",
+				"rules": [
+					{
+						"type": "maxLength",
+						"contexts": "*",
+						"failureMessage": "The first name cannot be longer than 100 characters.",
+						"params": [
+							{"name": "maxLength", "value": "100"}
+						]
+					},
+					{
+						"type": "required",
+						"contexts": "*",
+						"failureMessage": "The first name is required."
+					}
+				]
+		},
+		{
+				"name": "startDate",
+				"desc": "startDate",
+				"clientFieldName": "startDate",
+				"rules": [
+					{
+						"type": "date",
+						"contexts": "*",
+						"failureMessage": "The start date must be provided in valid date format."
+					},
+					{
+						"type": "required",
+						"contexts": "*",
+						"failureMessage": "A start date is required."
+					}
+				]
+		},
+		{
+				"name": "age",
+				"desc": "age",
+				"clientFieldName": "age",
+				"rules": [
+					{
+						"type": "integer",
+						"contexts": "*",
+						"failureMessage": "The age (if provided) must be an integer."
+					}
+				]
+		},
+		{
+				"name": "email",
+				"desc": "email",
+				"clientFieldName": "email",
+				"rules": [
+					{
+						"type": "email",
+						"contexts": "*",
+						"failureMessage": "The email address provided does not match the standard email pattern."
+					},
+					{
+						"type": "required",
+						"contexts": "*",
+						"failureMessage": "An email address is required."
+					}
+				]
+		},
+		{
+				"name": "lastName",
+				"desc": "lastName",
+				"clientFieldName": "lastName",
+				"rules": [
+					{
+						"type": "maxLength",
+						"contexts": "*",
+						"failureMessage": "The last name cannot be longer than 100 characters.",
+						"params": [
+							{"name": "maxLength", "value": "100"}
+						]
+					},
+					{
+						"type": "required",
+						"contexts": "*",
+						"failureMessage": "The last name is required."
+					}
+				]
+		}
+	]
+}}	
+

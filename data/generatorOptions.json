@@ -1,0 +1,9 @@
+[
+     {"name": "--NONE--"},
+     {"name": "native"},
+     {"name": "sequence"},
+     {"name": "increment"},
+     {"name": "identity"},
+     {"name": "assigned"},
+     {"name": "foreign"}
+]

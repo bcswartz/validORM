@@ -1,0 +1,27 @@
+<a href="" class="toggleLink" ng-click="toggleOpen('validationContexts')">
+	<i class="icon-minus-sign ng-show: ngOpen.validationContexts== true"></i>
+	<i class="icon-plus-sign ng-show: ngOpen.validationContexts== false"></i>
+</a>
+
+<h2>Validation Contexts</h2>
+
+<p class="topLevelBlurb">(Optional) Adds section VT rules file that associates validation contexts with specific form names.</p>
+
+<div class="openBlock ng-show: ngOpen.validationContexts== true">
+	
+	<p class="toggleAllControls"><a href="" ng-click="toggleAll('contextSet',true)">Open All</a> | <a href="" ng-click="toggleAll('contextSet',false)">Close All</a></p>
+	
+	<div class="control-group">
+		<label class="control-label">Add Context:</label>
+		<div class="controls">
+			<input type="text" class="input-medium" ng-model="tempData.contextToAdd" value="{{contextToAdd}}" />
+			<input type="button" value="Add" ng-click="addContext(tempData.contextToAdd)" />
+			<i class="icon-question-mark" title="Use to create a new context to associate with a form name"></i>
+		</div>
+	</div>
+
+	<div class="blockContainer">
+		<div class="expandBlockStyleB" ng-repeat="(ctxt,ctxtParams) in vt.contexts" ng-include src="'includes/contextBlock.html'"></div>
+	</div>
+	
+</div>

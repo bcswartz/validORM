@@ -1,0 +1,350 @@
+{
+	"boolean": {
+		"label": "boolean",
+		"hint": "The property value must equate to a valid ColdFusion boolean value (true/false, yes/no, 1/0)"
+	},
+	
+	"collectionSize": {
+		"label": "collectionSize",
+		"hint": "This validation ensures that the contents of a property is of a specific size. On the server this can be a list, struct or array. On the client it can be a multi-select form field. Default size is 1 unless parameters specify otherwise.",
+		"params": {
+			"min": {
+				"hint": "Minimum size of the collection.  Defaults to 1.",
+				"required": false
+			},
+			"max": {
+				"hint": "Maximum size of the collection. Defaults to whatever min param is set to.",
+				"required": false
+			}	
+		}
+	},
+	
+	"custom": {
+		"label": "custom",
+		"hint": "This rule allows you to create a validation which uses any arbitrary CFML code. You do so by specifying the name of a method in your object that will perform the validation.", 
+		"params": {
+			"methodName": {
+				"hint": "The name of the method in your object that determines whether the validation passes or not.",
+				"required": true
+			},
+			"remoteURL": {
+				"hint": "A url that can be called via AJAX which will run code to determine whether the validation passes or not, and returns a message to the client.", 
+				"required": false
+			}
+		}
+	},
+	
+	"date": {
+		"label": "date",
+		"hint": "This rule ensures that the property value is a valid date value."
+	},
+	
+	"dateRange": {
+		"label": "dateRange",
+		"hint": "This validation ensures that the property value is a valid date that falls between two dates.",
+		"params": {
+			"from": {
+				"hint": "The start date of the range in YYYY-MM-DD format.",
+				"required": true
+			},
+			"until": {
+				"hint": "The end date of the range in YYYY-MM-DD format.",
+				"required": true
+			}
+		}
+	},
+	
+	"doesNotContainOtherProperties" : {
+		"label": "doesNotContainOtherProperties",
+		"hint": "This rule ensures that the contents of a property does not contain values found in other properties. This can be used, for example, to ensure that a password property doesn't include the user's first or last names.",
+		"params": {
+			"propertyNames": {
+				"hint": "The names of the other properties.",
+				"required": true
+			},
+			"delim": {
+				"hint": "The delimiter used in the list of other properties in propertiesName. Default is a comma.",
+				"required": false
+			}
+		} 
+	},
+	
+	"email": {
+		"label": "email",
+		"hint": "The property value must be a valid email address."
+	},
+	
+	"equalTo": {
+		"label": "equalTo",
+		"hint": "This rule validates that the contents of one property is the same as the contents of another property.",
+		"params": {
+			"comparePropertyName": {
+				"hint":  "The name of the other property this property should be equal to.",
+				"required": true
+			},
+			"comparePropertyDesc": {
+				"hint": "A description of the other property (otherwise the raw property name will be used).",
+				"required": false
+			}
+		}
+	},
+	
+	"expression": {
+		"label": "expression",
+		"hint": "(Server-side only) Ensures that a CFML expression evaluates to true.",
+		"params": {
+			"expression": {
+				"hint":  "The CFML expression to use on the object, like seeing if the result of two functions equal each other.",
+				"required": true
+			}
+		}
+	},
+	
+	"false": {
+		"label": "false",
+		"hint": "This rule mandates that the contents of a property is a value that can be interpreted as false. This includes the values false, no and 0." 
+	},
+	
+	"futureDate": {
+		"label": "futureDate",
+		"hint": "This rule ensures that the contents of a property is a valid date that falls after a particular date.",
+		"params": {
+			"after": {
+				"hint": "The date the property should be after, in YYYY-MM-DD format. Defaults to current date.",
+				"required": false
+			}
+		}
+	},
+	
+	"inList": {
+		"label": "inList",
+		"hint": "Ensures that the contents of a property is one of the values specified in a list.",
+		"params": {
+			"list": {
+				"hint": "The list of values to be searched.",
+				"required": true
+			},
+			"delim": {
+				"hint": "The delimiter used in the list of values to be searched. Defaults to a comma.", 
+				"required": false
+			}
+		} 
+	},
+	
+	"integer": {
+		"label": "integer",
+		"hint": "Validates that the property value is an integer."
+	},
+	
+	"isValidObject": {
+		"label": "isValidObject",
+		"hint": "This rule is used to validate properties which contain other objects.",
+		"params": {
+			"objectType": {
+				"hint": "The type of object contained in the property. This corresponds to what you'd normally pass into the objectType argument of the validate method when manually validating an object. ",
+				"required": false
+			},
+			"context": {
+				"context": "The context to be used when validating the object contained in the property. Defaults to *, which is all or no contexts.",
+				"required": false
+			}
+		} 
+	},
+	
+	"max": {
+		"label": "max",
+		"hint": "Ensures that the property value does not exceed the stated maximum value.",
+		"params": {
+			"max": {
+				"hint": "The maximum numeric value.",
+				"required": true
+			}
+		}
+	},
+	
+	"maxLength": {
+		"label": "maxLength",
+		"hint": "Ensures the property does not exceed the maximum number of characters.",
+		"params": {
+			"maxLength": {
+				"hint": "Maximum number of characters allowed.",
+				"required": true
+			}
+		}
+	},
+	
+	"min": {
+		"label": "min",
+		"hint":  "Ensures that the property value is not less than the stated minimum value.",
+		"params": {
+			"min": {
+				"hint": "The minimum numeric value",
+				"required": true
+			}
+		}
+	},
+	
+	"minLength": {
+		"label": "minLength",
+		"hint": "Ensures the property contains the minimum number of characters.",
+		"params": {
+			"minLength": {
+				"hint": "Minimum number of characters allowed.",
+				"required": true
+			}
+		}
+	},
+	
+	"minPatternsMatch": {
+		"label": "minPatternsMatch",
+		"hint": "This rule ensures that the contents of a property matches a minimum number of regex patterns. This can be used, for example, to ensure that a password property conforms to certain standards.",
+		"params": {
+			"minMatches": {
+				"hint": "The minimum number of patterns that the value must match.",
+				"required": true
+			},
+			"pattern_1": {
+				"hint": "The text after the underscore is the unique name of the pattern.  Provide a regex expression as the value.",
+				"required": true
+			},
+			"pattern_2": {
+				"hint": "The text after the underscore is the unique name of the pattern.  Provide a regex expression as the value.",
+				"required": true
+			},
+			"pattern_3": {
+				"hint": "The text after the underscore is the unique name of the pattern.  Provide a regex expression as the value.",
+				"required": false
+			},
+			"pattern_4": {
+				"hint": "The text after the underscore is the unique name of the pattern.  Provide a regex expression as the value.",
+				"required": false
+			},
+			"pattern_5": {
+				"hint": "The text after the underscore is the unique name of the pattern.  Provide a regex expression as the value.",
+				"required": false
+			},
+			"pattern_6": {
+				"hint": "The text after the underscore is the unique name of the pattern.  Provide a regex expression as the value.",
+				"required": false
+			},
+			"pattern_7": {
+				"hint": "The text after the underscore is the unique name of the pattern.  Provide a regex expression as the value.",
+				"required": false
+			},
+			"pattern_8": {
+				"hint": "The text after the underscore is the unique name of the pattern.  Provide a regex expression as the value.",
+				"required": false
+			},
+			"pattern_9": {
+				"hint": "The text after the underscore is the unique name of the pattern.  Provide a regex expression as the value.",
+				"required": false
+			},
+			"pattern_10": {
+				"hint": "The text after the underscore is the unique name of the pattern.  Provide a regex expression as the value. (If you need more than 10, add them after the validation rule file has been created)",
+				"required": false
+			}
+		}
+	},
+	
+	"noHTML": {
+		"label": "noHTML",
+		"hint": "Ensures the property value does not contain HTML."
+	},
+	
+	"notInList": {
+		"label": "notInList",
+		"hint": "Ensures that the contents of a property is not equal to one of the values specified in a list.",
+		"params": {
+			"list": {
+				"hint": "The list of values to be searched.",
+				"required": true
+			},
+			"delim": {
+				"hint": "The delimiter used in the list of values to be searched. Defaults to a comma.", 
+				"required": false
+			}
+		} 
+	},
+	
+	"numeric": {
+		"label": "numeric",
+		"hint": "Ensures that the property value is a valid numeric value."
+	},
+	
+	"pastDate": {
+		"label": "pastDate",
+		"hint": "This rule ensures that the contents of a property is a valid date that comes before a particular date.",
+		"params": {
+			"before": {
+				"hint": "The date the property should be before, in YYYY-MM-DD format. Defaults to current date.",
+				"required": false
+			}
+		}
+	},
+	
+	"range": {
+		"label": "range",
+		"hint": "This rule validates that the contents of a property contains a value between two numbers.",
+		"params": {
+			"min": {
+				"hint": "Minimum numeric value for the range.",
+				"required": true
+			},
+			"max": {
+				"hint": "Maximum numeric value for the range.",
+				"required": true
+			}
+		}
+	},	
+	
+	"rangeLength": {
+		"label": "rangeLength",
+		"hint": "Ensures that the length of the contents of a property is between two numbers.",
+		"params": {
+			"minLength": {
+				"hint": "The minimum length of the property value.",
+				"required": true
+			},
+			"maxLength": {
+				"hint": "The maximum length of the property value.",
+				"required": true
+			}
+		}
+	},
+	
+	"regex": {
+		"label": "regex",
+		"hint": "Ensures that the contents of a property conforms to a regular expression.",
+		"params": {
+			"regex": {
+				"hint": "The regular expression the property value must conform to.",
+				"required": true
+			},
+			"serverRegex": {
+				"hint": "The server-side version of the regular expression (if different expression needed).",
+				"required": false
+			}
+		}
+	},
+	
+	"required": {
+		"label": "required",
+		"hint": "Ensures that the contents of the property is not empty."
+	},
+	
+	"time": {
+		"label": "time",
+		"hint": "Ensures that the contents of a property is a valid time value in the format 00:00. This includes values between 00:00 and 23:59." 
+	},
+	
+	"true": {
+		"label": "true",
+		"hint": "This rule mandates that the contents of a property is a value that can be interpreted as true. This includes the values true, yes and 1." 
+	},
+	
+	"url": {
+		"label": "url",
+		"hint": "Ensures that the contents of a property is a valid (properly formed) URL." 
+	}
+	
+}

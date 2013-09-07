@@ -1,0 +1,72 @@
+<div class="ruleHeader">
+	<a href="" class="toggleLink" ng-click="toggleOpen(prop,'ruleSet',$index)">
+		<i class="icon-minus-sign ng-show: ngOpen.ruleSet[prop][$index]== true"></i>
+		<i class="icon-plus-sign ng-show: ngOpen.ruleSet[prop][$index]== null || ngOpen.ruleSet[prop][$index]== false"></i>
+	</a>
+	
+	<h5>
+		{{colRules[rule.type].label}}  <a class="deleteLink" ng-click="deleteRule($index,rule.type,vt.props[prop].rules,prop)" href="">X</a>
+	</h5>
+	<span class="ruleTypeHint">{{colRules[rule.type].hint}}</span>
+</div>
+
+<div ng-show= "ngOpen.ruleSet[prop][$index]== true">
+	<div class="control-group">
+		<label class="control-label">Context(s):</label>   
+		<div class="controls">
+			<input type="text" class="input-medium" ng-model="rule.contexts" />
+			<i class="icon-question-sign" title="Comma-delimited list (do not include space after comma); use * for all."></i>
+		</div>   
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label">Failure message:</label>   
+		<div class="controls">
+			<input type="text" class="input-xxlarge" ng-model="rule.failureMessage" />
+			<i class="icon-question-sign" title="(Optional) Message show to user if this validation fails."></i> 
+		</div>   
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label">Condition:</label>   
+		<div class="controls">
+			<input type="text" class="input-xxlarge" ng-model="rule.condition" />
+			<i class="icon-question-sign" title="(Optional) Rule only enforced if this condition - matching a condition defined in the conditions block - is met."></i> 
+		</div>   
+	</div>
+	
+	<div class="control-group ng-show: rule.params != null || colRules[rule.type].optionalParamCount > 0">
+		<label class="control-label">Rule parameters:</label>   
+		<div class="controls">
+			
+			<ul class="ruleParams ng-show: rule.params != null" ng-repeat="p in rule.params">
+				<li>	
+					<div class="control-group">
+						<label class="control-label">{{p.name}}: </label>   
+						<div class="controls">
+							<input type="text" class="input-large" ng-model="p.value" />
+							<i class="icon-question-sign" title="{{colRules[rule.type].params[p.name].hint}}"></i> 
+							<a href="" ng-click="deleteOptRuleParam($index,rule)" class="ng-show: colRules[rule.type].params[p.name].required== false">X</a>
+						</div>   
+					</div>
+				</li>
+			</ul>
+			
+			<ul class="ruleParams ng-show: colRules[rule.type].optionalParamCount > 0">
+				<li>
+					<div class="control-group">
+						<label class="control-label optRuleParamLabel">Optional params: </label>   
+						<div class="controls">
+							<select class="input-medium" ng-model="opToAdd" ng-options="optParam.name as optParam.name for optParam in colRules[rule.type].optionalParams" ng-change="updateOptionalRuleParamHint(rule.type,opToAdd)"></select> 
+							<input type="button" class="btn" value="Add" ng-click="addOptRuleParam(opToAdd,rule)"  /> 
+							<i class="icon-question-sign" title="Some rules have optional parameters.  Use this control to add ones you want to use."></i> 
+							<p>{{colRules[rule.type].optionalParamHint}}</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+		</div>
+	</div>
+</div>
+

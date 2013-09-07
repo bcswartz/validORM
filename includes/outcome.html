@@ -1,0 +1,19 @@
+<div ng-show="dataResponse.outcome != 'notRun'">
+	<div ng-switch on="dataResponse.outcome">
+		<div ng-switch-when="success">
+			<p class="successText">Your ORM CFC file and corresponding ValidateThis file were generated successfully.</p>
+		</div>
+		<div ng-switch-when="failure">
+			<div class="errorText">
+				<p>{{dataResponse.errorStatement}}</p>
+				<ul ng-repeat="err in dataResponse.errors">
+					<li> 
+						<p>
+							{{err}}
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

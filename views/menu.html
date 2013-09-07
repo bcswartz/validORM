@@ -1,0 +1,45 @@
+<h1>ORM Object and Validation Generation</h1>
+
+<div id="menuOptions" ng-controller="MenuOptions">
+	
+	<p>This tool, powered primarily with AngularJS, will help you design and generate an <a href="http://help.adobe.com/en_US/ColdFusion/9.0/Developing/WSD628ADC4-A5F7-4079-99E0-FD725BE9B4BD.html">ORM</a> CFC file and a corresponding <a href="https://github.com/ValidateThis/ValidateThis">ValidateThis (VT)</a> validation file to manage both client-side and server-side validation.</p>
+	
+	<div class="menuBlock">
+		
+		<p>Choose from the following option(s):</p>
+		
+		<div class="menuChoice">
+
+			<p>
+				<a href="#/new">Generate a new ORM file and corresponding VT file.</a>
+			</p>
+			
+			<p ng-show="fileCollection.length== 0">You currently have no files from previous uses of this tool (every time you use the tool to generate files, all of the design data is stored in a timestamped JSON file which you can then load and use to make changes).</p>
+			
+		</div>
+		
+		<p id="orBlock" ng-show="fileCollection.length > 0">OR</p>
+		
+		<div class="menuChoice ng-show: fileCollection.length > 0">
+			<p>Load the ORM and VT design data from a previous creation using the list below (listed by object name and organized by date and time of creation):</p>
+			<br />
+			<ul id="fileList" ng-repeat="files in fileCollection">
+				<li class="expandBlockStyleA">
+					<a href=""  class="toggleLink" ng-click="toggleMenuOpen(files.name)">
+						<i class="icon-minus-sign ng-show: ngMenuOpen[files.name]== true"></i>
+						<i class="icon-plus-sign ng-show: ngMenuOpen[files.name]== false"></i>
+					</a>
+					<h4>{{files.name}}</h4>
+					<ul class="fileTimestamps ng-show: ngMenuOpen[files.name]== true" ng-repeat="copy in files.copies">
+						<li>
+							<a href="#/load/{{copy.queryString}}">{{copy.dateString}} -- {{copy.timeString}}</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+	
+</div>
+

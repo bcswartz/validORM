@@ -1,0 +1,36 @@
+<a href="" class="toggleLink" ng-click="toggleOpen(con,'conditionSet')">
+	<i class="icon-minus-sign ng-show: ngOpen.conditionSet[con]== true"></i>
+	<i class="icon-plus-sign ng-show: ngOpen.conditionSet[con]== null || ngOpen.conditionSet[con]== false"></i>
+</a>
+
+<h3>
+	{{con}}
+	<a href="" class="deleteLink" ng-click="deleteCondition(con)">X</a>
+</h3>
+
+<div class="openBlock ng-show: ngOpen.conditionSet[con]== true">
+	<br />
+	<div class="control-group">
+		<label class="control-label">Server Test:</label>   
+		<div class="controls">
+			<input type="text" class="input-xxlarge" ng-model="conParams.serverTest" />
+			<i class="icon-question-sign" title="(Required) A ColdFusion expression that will evaluate to either true or false in the context of this ORM object instance"></i>
+		</div>   
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label">Client Test:</label>   
+		<div class="controls">
+			<input type="text" class="input-xxlarge" ng-model="conParams.clientTest" />
+			<i class="icon-question-sign" title="(Optional) A JavaScript expression that will evaluate to either true or false in the context of a form."></i> 
+		</div>   
+	</div>
+	
+	<div class="control-group">
+		<label class="control-label">Description:</label>   
+		<div class="controls">
+			<input type="text" class="input-xxlarge" ng-model="conParams.desc" />
+			<i class="icon-question-sign" title="(Optional) A description of the condition, used to generate validation failure messages if no property-specific failure message is provided."></i> 
+		</div>   
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<a href="" class="toggleLink" ng-click="toggleOpen(ctxt,'contextSet')">
+	<i class="icon-minus-sign ng-show: ngOpen.contextSet[ctxt]== true"></i>
+	<i class="icon-plus-sign ng-show: ngOpen.contextSet[ctxt]== null || ngOpen.contextSet[ctxt]== false"></i>
+</a>
+
+<h3>
+	{{ctxt}}
+	<a href="" class="deleteLink" ng-click="deleteContext(ctxt)">X</a>
+</h3>
+
+<div class="openBlock ng-show: ngOpen.contextSet[ctxt]== true">
+	<br />
+	<div class="control-group">
+		<label class="control-label">Form name:</label>   
+		<div class="controls">
+			<input type="text" class="input-xxlarge" ng-model="ctxtParams.formName" />
+			<i class="icon-question-sign" title="(Required) The name of the form that corresponds to the context."></i>
+		</div>   
+	</div>
+	
+</div>

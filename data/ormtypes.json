@@ -1,0 +1,22 @@
+[
+               {"name": "big_decimal"},
+               {"name": "binary"},
+               {"name": "blob"},
+               {"name": "boolean"},
+               {"name": "char"},
+               {"name": "character"},
+               {"name": "clob"},
+               {"name": "date"},
+               {"name": "double"},
+               {"name": "float"},
+               {"name": "int"},
+               {"name": "integer"},
+               {"name": "long"},
+               {"name": "serializable"},
+               {"name": "short"},
+               {"name": "string"},
+               {"name": "text"},
+               {"name": "timestamp"},
+               {"name": "true_false"},
+               {"name": "yes_no"}
+ ]

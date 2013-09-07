@@ -1,0 +1,12 @@
+{
+	"name": "",
+	"table": "",
+	"id": {
+		"name": "id",
+		"column": "id",		
+		"generator": "native",
+		"ormType": "integer",
+		"setter": false
+	}
+
+}

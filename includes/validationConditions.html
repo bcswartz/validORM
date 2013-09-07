@@ -1,0 +1,27 @@
+<a href="" class="toggleLink" ng-click="toggleOpen('validationConditions')">
+	<i class="icon-minus-sign ng-show: ngOpen.validationConditions== true"></i>
+	<i class="icon-plus-sign ng-show: ngOpen.validationConditions== false"></i>
+</a>
+
+<h2>Validation Conditions</h2>
+
+<p class="topLevelBlurb">(Optional) Used to define any condition expressions cited in the property validations.</p>
+
+<div class="openBlock ng-show: ngOpen.validationConditions== true">
+	
+		<p class="toggleAllControls"><a href="" ng-click="toggleAll('conditionSet',true)">Open All</a> | <a href="" ng-click="toggleAll('conditionSet',false)">Close All</a></p>
+	
+	<div class="control-group">
+		<label class="control-label">Add Condition:</label>
+		<div class="controls">
+			<input type="text" class="input-medium" ng-model="tempData.conditionToAdd" value="{{conditionToAdd}}" />
+			<input type="button" value="Add" ng-click="addCondition(tempData.conditionToAdd)" />
+			<i class="icon-question-mark" title="Use to create a new condition one or more of the rules refer to."></i>
+		</div>
+	</div>
+
+	<div class="blockContainer">
+		<div class="expandBlockStyleB" ng-repeat="(con,conParams) in vt.conditions" ng-include src="'includes/conditionBlock.html'"></div>
+	</div>
+	
+</div>
