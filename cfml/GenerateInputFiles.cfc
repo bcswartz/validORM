@@ -1,5 +1,5 @@
 <cfcomponent>
-	<cffunction name="listFiles" access="remote" returntype="string" output="false">
+	<cffunction name="listFiles" access="remote" returnFormat="JSON" output="false">
 		<cfscript>
 			var filePath= "#expandPath('..')#/output/generatorLoadFiles/";
 			var qry1= DirectoryList(filePath,false,"query","","name asc");
@@ -39,8 +39,8 @@
 			<cfset ArrayAppend(returnArray,fileStruct) />
 		</cfoutput>
 		
-		<cfreturn serializeJson(returnArray)>
-	
+		<cfreturn returnArray>
+
 	</cffunction>
 	
 </cfcomponent>

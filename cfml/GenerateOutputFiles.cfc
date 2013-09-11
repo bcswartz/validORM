@@ -1,5 +1,5 @@
 ﻿<cfcomponent>
-	<cffunction name="createFiles" access="remote" output="false" returntype="string">
+	<cffunction name="createFiles" access="remote" output="false" returnFormat="JSON">
 		<cfset var masterPath= expandPath("..")>
 		<cfset var testJson= "">
 		<cfset var rawJson= "">
@@ -27,7 +27,7 @@
 			<cfset jsonResponse["errors"]= errArray>
 		</cfif>
 		
-		<cfreturn serializeJson(jsonResponse) />
+		<cfreturn jsonResponse />
 		
 	</cffunction>
 	
